@@ -1,100 +1,98 @@
-# Attendance System (Django Project) 
-This is a simple Django-based attendance management system. It allows you to manage students and record their attendance for each day. 
 
----------------------------------------------------------- 
+# Portfolio Website (Django Project)
 
-## Project Contents and Explanation 
+This is a simple Django-based portfolio website. It displays personal information, projects, skills, and other details using Django templates, views, and static files.
 
-### 1. attendance_system/
-This is the main Django project folder. 
-It contains: 
-- **settings.py** – Main configuration file for the project. 
-- **urls.py** – Defines the global URL routes. 
-- **wsgi.py / asgi.py** – Server deployment files. These files make sure Django knows how to run the project. 
+--------------------------------------------------------------------------------
 
----------------------------------------------------------- 
+## Project Contents
 
-### 2. portal/ 
-This is the main app of the project. It contains the core logic. 
-Inside this folder: 
+### 1. portfolioProject/
+Main Django project folder. Contains:
+- **settings.py** – Project settings  
+- **urls.py** – Main URL routes  
+- **wsgi.py / asgi.py** – Server files  
 
-#### **a. models.py** 
-Contains two models: 
-- **Student** – Stores student information (name, active status). 
-- **Attendance** – Stores attendance records for each student for a specific date. These models create tables in the database. 
+These files help Django run the project.
 
-#### **b. views.py** 
-Contains all the functions that run the website: 
-- Show home page 
-- Display list of students 
-- Mark attendance 
-- Save attendance 
-- Update old attendance 
-- Display records Each function handles a specific page. 
+--------------------------------------------------------------------------------
 
-#### **c. urls.py** 
-Contains URL patterns for the portal. Links each page to its view. 
+### 2. main/
+Main app of the portfolio website.
 
-#### **d. templates/portal/** 
-Contains HTML files: 
-- **home.html** – Landing page 
-- **attendance.html** – Marking attendance page 
-- **update.html** – Update attendance page 
-- **display.html** – Shows attendance table These are the frontend pages the user sees. 
+#### a. models.py
+Contains the database structure (if used).  
+Some portfolio projects may not require models.
 
-#### **e. static/portal/** 
-Contains: 
-- **style.css** – Basic CSS for layout 
+#### b. views.py
+Handles the logic for each page.  
+Examples:
+- Home page  
+- About page  
+- Projects page  
+- Contact page  
 
----------------------------------------------------------- 
+#### c. urls.py
+Connects each page to its corresponding view.
 
-### **3. db.sqlite3** 
-This is the database file where all student records and attendance entries are stored. 
+#### d. templates/main/
+HTML templates that display the website’s content.
 
----------------------------------------------------------- 
+#### e. static/main/
+Static files such as:
+- CSS  
+- JS  
+- Images  
 
-### **4. manage.py** 
-This file allows you to: 
-- Run the server 
-- Run migrations 
-- Create superusers 
-- Perform Django commands 
+Used for page styling and design.
 
----------------------------------------------------------- 
+--------------------------------------------------------------------------------
 
-## Working 
-1. **Students are stored in the database** 
-When the project runs, it loads students from the Student model. 
+### 3. db.sqlite3
+Database file (if any models store data).  
+Can be used for dynamic content.
 
-2. **Attendance marking** 
-The attendance page shows all active students. You choose: **Present, Absent, or Leave** for each student. 
+--------------------------------------------------------------------------------
 
-3. **Saving attendance** 
-When you press save: - The system stores each student's attendance for that date in the Attendance table. 
+### 4. manage.py
+Used for running the server, migrations, and managing the project through Django commands.
 
-4. **Updating attendance** 
-If attendance already exists for a date, you can edit and save it again. 
+--------------------------------------------------------------------------------
 
-5. **Displaying attendance** 
-You can pick a date and see all attendance saved for that day. 
+## How It Works (Simple)
 
----------------------------------------------------------- 
+1. The user visits pages like home, about, skills, and projects.  
+2. Django loads the templates from the `main/templates` folder.  
+3. Static files (CSS/images) are loaded from `main/static`.  
+4. Views connect the templates with any required data.
 
-##  Running the Project 
+--------------------------------------------------------------------------------
 
-### Step 1 — Create Virtual Environment
+## How to Run the Project
+
+### Step 1 – Create Virtual Environment
 python -m venv env
 
-### Step 2 — Activate It Windows:
-env\Scripts\activate
+--------------------------------------------------------------------------------
 
-### Step 3 — Install Django
+
+### Step 2 – Activate It
+env\Scripts\activate
+OR
+
+1. Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+Then 
+2. env\Scripts\activate
+
+--------------------------------------------------------------------------------
+
+### Step 3 – Install Django
 pip install django
 
-### Step 4 — Migrate Database
-python manage.py migrate
+--------------------------------------------------------------------------------
 
-### Step 5 — Start Server
+### Step 4 – Run Server
 python manage.py runserver
 
----------------------------------------------------------- 
+--------------------------------------------------------------------------------
+
