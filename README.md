@@ -1,5 +1,8 @@
 # Attendance System (Django Project) 
-This is a simple Django-based attendance management system. It allows you to manage students and record their attendance for each day. ---------------------------------------------------------- 
+This is a simple Django-based attendance management system. It allows you to manage students and record their attendance for each day. 
+
+---------------------------------------------------------- 
+
 ## Project Contents and Explanation 
 
 ### 1. attendance_system/
@@ -59,7 +62,7 @@ This file allows you to:
 
 ---------------------------------------------------------- 
 
-## 🚀 How It Works (Very Simple Explanation) 
+## Working 
 1. **Students are stored in the database** 
 When the project runs, it loads students from the Student model. 
 
@@ -77,7 +80,7 @@ You can pick a date and see all attendance saved for that day.
 
 ---------------------------------------------------------- 
 
-##  Running the Project ##
+##  Running the Project 
 
 ### Step 1 — Create Virtual Environment
 python -m venv env
