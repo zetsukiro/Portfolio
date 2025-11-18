@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Add Tool{% endblock %}
+{% block content %}
+
+<h3>Add Tool / Technology</h3>
+
+<form method="post">
+    {% csrf_token %}
+    <label class="form-label">Tool Name</label>
+    <input type="text" name="name" class="form-control" required>
+    <button class="btn btn-dark mt-3">Add Tool</button>
+</form>
+
+{% endblock %}

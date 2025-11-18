@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Work Experience{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Work Experience</h2>
+
+<a href="{% url 'add_experience' %}" class="btn btn-primary mb-3">Add Work Experience</a>
+
+{% for exp in experiences %}
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h4 class="card-title">{{ exp.title }}</h4>
+                <h6 class="text-muted">
+                    {% if exp.company %}
+                        {{ exp.company }}
+                    {% else %}
+                        Company: –
+                    {% endif %}
+                </h6>
+            </div>
+            <div>
+                <a href="{% url 'delete_experience' exp.id %}" class="btn btn-sm btn-outline-danger">
+                    Delete
+                </a>
+            </div>
+        </div>
+
+        <p class="mb-1"><strong>Role:</strong> {{ exp.role }}</p>
+        <p class="mb-1"><strong>Purpose:</strong> {{ exp.purpose }}</p>
+        <p class="mb-1"><strong>Duration:</strong> {{ exp.duration }}</p>
+
+        <p class="mt-3">
+            {{ exp.description }}
+        </p>
+    </div>
+</div>
+{% empty %}
+<p>No work experience added yet.</p>
+{% endfor %}
+
+{% endblock %}
